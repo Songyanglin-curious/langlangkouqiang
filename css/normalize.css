@@ -1,0 +1,108 @@
+html, body, div, ul, li, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, figure,form, input, textarea, th, td, select,time {
+  margin: 0;
+  padding: 0;
+  }
+  *{box-sizing: border-box;}
+  html, body {
+  min-height: 100%;
+  }
+  
+  body {
+  font-family: "Microsoft YaHei";
+  font-size:12px;
+  color:#010101;
+  ;
+  }
+  h1, h2, h3, h4, h5, h6{font-weight:normal;}
+  ul,ol {
+  list-style: none;
+  }
+
+  button{
+    /*消除button的默认样式*/
+    /*这种写法是对所有的button标签同时生效*/
+    margin: 0px;
+    padding: 0px;
+    /*自定义边框*/
+    border: 0px;
+    /*消除默认点击蓝色边框效果*/
+    outline: none;
+    /* 消除背景色 */
+    background-color: transparent;
+}
+  
+  img {
+  border: none;
+  vertical-align: middle;
+  }
+  
+  a {
+  text-decoration: none;
+  color: #a0a0a0;
+  }
+  
+  table {
+  border-collapse: collapse;
+  table-layout: fixed;
+  }
+  
+  input, textarea {
+  outline: none;
+  border: none;
+  }
+  
+  textarea {
+  resize: none;
+  overflow: auto;
+  }
+  
+  /* .clearfix {
+  zoom: 1;
+  } */
+  
+  /* .clearfix:after {
+  content: ".";
+  width: 0;
+  height: 0;
+  visibility: hidden;
+  display: block;
+  clear: both;
+  overflow:hidden;
+  } */
+  .clearfix:after{
+    content:".";        
+    display:block;        
+    height:0;        
+    clear:both;        
+    visibility:hidden; 
+  }
+  .fl {
+  float: left
+  }
+  
+  .fr {
+  float: right
+  }
+  
+  .tl {
+  text-align: left;
+  }
+  
+  .tc {
+  text-align: center
+  }
+  
+  .tr {
+  text-align: right;
+  }
+  
+  .ellipse {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  }
+  .inline{
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  }

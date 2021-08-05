@@ -1,0 +1,424 @@
+@charset "utf-8";
+@import 'sassConfig.scss';
+
+.color-main{
+    color: $color-main;
+}
+.color-second{
+    color: $color-second;
+}
+.text-main{
+    color: $text-main;
+}
+
+
+// 内容
+.container{
+    width: $container;
+    margin: 0 auto;
+}
+
+// 顶部菜单
+.top-menu{
+    margin-top: 8px;
+    height: 22px;
+    line-height: 22px;
+    color: $text-second;
+    display: flex;
+    // align-items: center;
+    justify-content: flex-end;
+    span{
+        margin: 0 12px ;
+    }
+}
+// 中文菜单
+.lang{
+    width: 53px;
+    height: 22px;
+    background-color: #ececec;
+    text-align: center;
+    position: relative;
+    // 伪元素创建箭头；特点可见不可得
+    &::after{
+        content: "";
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-left: solid 1px $text-second;
+        border-bottom: solid 1px $text-second;
+        box-sizing: border-box;
+        transform: rotate(-45deg);
+        margin: 0 0 2px 0;
+
+    }
+    &:hover{
+        ul{
+            display: block;
+        }
+    }
+    ul{
+        position: absolute;
+        top: 100%;
+        right: 0;
+        display: none;
+        a{
+            display: block;
+            width: 95px;
+            height: 28px;
+            text-align: center;
+            line-height: 28px;
+            background-color: #ececec;
+            color: $text-main;
+            &:hover{
+                color: $color-main;
+                background-color: #e0e0e0;
+            }
+        }
+    }
+    // .icon-arrow{
+    //     display: inline-block;
+    //     width: 8px;
+    //     height: 8px;
+    //     border-left: solid 1px $text-second;
+    //     border-bottom: solid 1px $text-second;
+    //     box-sizing: border-box;
+    //     transform: rotate(-45deg);
+    //     margin: 0 0 2px 0;
+    // }
+}
+// 顶部导航
+.top-nav{
+    display: flex;
+    justify-content: space-between;
+    .logo{
+        margin-bottom: 29px;
+    }
+}
+
+.nav{
+    margin: auto 0;
+    >ul{
+        display: flex;
+        position: relative;
+        &:last-child{
+        margin-right: 85px;
+        }
+        >li{
+            position: relative;
+            a{
+            display: block;
+            width: 114px;
+            height: 53px;
+            color: $text-main;
+            text-align: center;
+            line-height: 53px;
+            font-weight: 800;
+            // background-color: #f5f5f5;
+            }
+            &::after{
+                content: "";
+                position: absolute;
+                display: none;
+                bottom: -7px;
+                left: 50%;
+                margin-left: -7px;
+                border-top: 7px solid #f5f5f5;
+                border-left: 7px solid transparent;
+                border-right: 7px solid transparent;
+            }
+            &:hover{
+                background-color: #f5f5f5;
+                &::after{
+                    display: block;
+                }
+                >ul{
+                    display: block;
+                }
+            }
+
+            &.current{
+            a{
+                background-color: #f5f5f5;
+                }
+        }
+        }
+
+        ul{
+            display: none;
+            position: absolute;
+            z-index: 100;
+            top: 100%;
+            padding-top: 19px;
+            // margin-top: 17px;
+            a{
+                height: 41px;
+                line-height: 41px;
+                background-color: #f5f5f5;
+                color: $text-second;
+                &:hover{
+                    background-color: #eaeaea;
+                }
+            }
+            li{
+                position: relative;
+                &:hover{
+                    ul{
+                        display: block;
+                    }
+                }
+            }
+            ul{
+                display: none;
+                position: absolute;
+                margin-top: 22px;
+                top: -100%;
+                left: 100%;
+            }
+        }
+    }
+}
+
+
+
+// footer
+body{
+    >footer{
+        background-color: #f6f6f6;
+        color:#b3b3b3;
+    }
+}
+.level{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 62px;
+}
+// pull-left
+.pull-left{
+    >h5{
+        font-size: 24px;
+        line-height: 54px;
+    }
+    >p{
+        font-size: 12px;
+        line-height: 23px;
+    }
+    .share{
+        margin-top: 38px;
+
+        a{
+            position: relative;
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            // background-color: #e0e0e0;
+            margin-right: 24px;
+            border-radius: 100px;
+        }
+        .sing-share{
+            background: url(../image/icon-share.png) no-repeat 0 0 #e0e0e0 ;
+            &:hover{
+                background-color: #dc261b;
+            }
+        }
+        .weichat-share{
+            background: url(../image/icon-share.png) no-repeat -30px 0 #e0e0e0 ;
+            &:hover{
+                background-color: #3cb035;
+                p{
+                    // display: block;
+                    visibility: visible;
+                    bottom: 160%;
+                    opacity: 1;
+                }
+            }
+
+        }
+        p{
+            // display: none;
+            visibility: hidden;
+            position: absolute;
+            bottom: 100%;
+            width: 80px;
+            height: 80px;
+            padding: 4px;
+            border-radius: 6px;
+            background-color: #ffffff;
+            left: 50%;
+            margin-left: -40px;
+            opacity: 0.2;
+            filter: drop-shadow(0 0 10px rgba(0,0,0,0.3));
+            transition: all 0.5s ease 0s;
+            &::after{
+                content: "";
+                position: absolute;
+                left: 50%;
+                margin-left: -8px;
+                bottom: -8px;
+                border-top: solid 8px #ffffff;
+                border-left: solid 8px transparent;
+                border-right: solid 8px transparent;
+            }
+        }
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+// pull-right
+.pull-right{
+    .footer-menu{
+        display: flex;
+    }
+}
+.footer-menu{
+    dl{
+        width: 75px;
+        margin-left: 38px;
+        margin-top: 24px;
+        dt{
+            padding-bottom: 18px;
+            margin-bottom: 14px;
+            border-bottom: 1px solid #ececec;
+        }
+        dd{
+            line-height: 24px;
+        }
+        img{
+            width: 80px;
+            height: 80px;
+            padding: 6px;
+            margin-bottom: 6px;
+            background-color: #fff;
+            border-radius: 6px;
+        }
+        p{
+            text-align: center;
+        }
+    }
+}
+
+.copy-right{
+    margin-top: 59px;
+    border-top: 1px solid #e0e0e0;
+    font-size: 12px;
+    line-height: 48px;
+}
+
+// 主体内容
+.main-content-title{
+    text-align: center;
+    >h4{
+        font-size: 26px;
+        margin-bottom: 6px;
+    }
+    >p{
+        color: $text-second;
+        text-transform:uppercase
+    }
+    span{
+        margin: 0 12px;
+    }
+}
+
+// 定位标题
+.main-title-warp{
+    padding: 93px 0 69px 0;
+}
+
+// 图文列表
+.introduce-list{
+    ul{
+        display: flex;
+        justify-content: space-between;
+        margin: 0 68px;
+    }
+    figure{
+        width: 320px;
+    }
+    figcaption{
+        font-size: 18px;
+        padding-top: 17px;
+        padding-bottom: 2px;
+        border-bottom: solid 1px $text-second;
+    }
+    p{
+        margin-top: 11px;
+        color: $text-second;
+        line-height: 22px;
+    }
+}
+.introduce-list-button{
+    width: 100%;
+    padding-top: 56px;
+    padding-bottom: 90px;
+    text-align: center;
+    >button{
+        width: 110px;
+        height: 38px;
+        border: solid 1px $text-second;
+        border-radius: 19px;
+        background-color: #fff;
+        color: $text-second;
+    }
+}
+
+// 标题-郎朗公益
+.public-benefit-title{
+    background-color: #efefef;
+    padding: 54px 0 ;
+}
+// 公益部分图文列表
+.public-benefit-list{
+    display: flex;
+    div{padding: 46px 42px 0 42px;}
+    figure{
+        figcaption{
+            font-size: 24px;
+        }
+        time{
+            display: block;
+            color: #aaaaaa;
+            margin: 6px 0 10px 0;
+        }
+        .short-line{
+            display: block;
+            width: 38px;
+            border-bottom: solid 1px #cccccc;
+        }
+        p{
+            font-size: 12px;
+            line-height: 24px;
+            margin: 32px 0 15px 0;
+        }
+        button{
+            color: #585858;
+            border: solid 1px #676767;
+            padding: 10px 11px;
+            margin-bottom: 62px;
+        }
+    }
+}
+
+.public-benefit-1{
+    background-color: #eae9e4;
+    >div{
+        >button{
+            margin-bottom: 7px;
+        }
+    }
+}
+// .public-benefit-2{}
+.public-benefit-3{
+    background-color: #e03854;
+    color: #fff;
+    >div{
+        >button{
+            color: #fff;
+            border-color: #fff;
+        }
+    }
+}
+
+
+
