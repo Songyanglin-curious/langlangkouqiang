@@ -420,5 +420,8 @@ body{
     }
 }
 
-
+@for $i from 1 through 100 {
+    .padding-top-#{$i} { padding-top: 1px*$i; }
+    .padding-bottom-#{$i} { padding-bottom: 1px*$i; }
+}
 
